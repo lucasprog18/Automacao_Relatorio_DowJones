@@ -1,7 +1,31 @@
-# Python
+# Ignorar o ambiente virtual
+venv/
+.venv/ # Caso você use .venv como nome
+
+# Ignorar arquivos de cache do Python
 __pycache__/
 *.pyc
-venv/
-.env
-logs/
-output/
+*.pyd
+*.pyo
+
+# Ignorar arquivos de saída do projeto
+*.csv          # Ignora todos os arquivos .csv (se você gera outros CSVs além do relatório)
+output/        # Ignora a pasta 'output' inteira onde relatórios finais seriam salvos
+dow_jones_stock_data_csv # Se o nome exato for sempre o mesmo e estiver na raiz
+
+# Ignorar arquivos de log
+logs/          # Ignora a pasta 'logs' inteira
+*.log          # Ignora todos os arquivos .log
+
+# Ignorar arquivos específicos do sistema operacional
+.DS_Store      # macOS
+Thumbs.db      # Windows
+
+# Ignorar arquivos específicos do VS Code
+.vscode/       # Ignora a pasta de configurações do VS Code para o projeto
+*.code-workspace
+
+# Ignorar quaisquer arquivos de credenciais ou dados sensíveis (se existirem ou forem criados no futuro)
+# credentials.py
+# .env
+# *.env
