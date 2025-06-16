@@ -27,5 +27,4 @@ Thumbs.db      # Windows
 
 # Ignorar quaisquer arquivos de credenciais ou dados sensíveis (se existirem ou forem criados no futuro)
 # credentials.py
-# .env
-# *.env
+*.env

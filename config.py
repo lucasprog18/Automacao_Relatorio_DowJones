@@ -1,3 +1,8 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 YAHOO_FINANCE_BASE_URL = "https://finance.yahoo.com/quote/"
 
 # Lista ATUALIZADA dos 30 tickers do Dow Jones Industrial Average
@@ -44,8 +49,8 @@ SELECTOR_PREVIOUS_CLOSE = 'fin-streamer[data-field="regularMarketPreviousClose"]
 
 
 # --- Configurações de E-mail ---
-SENDER_EMAIL = "lucas.netgoncalves1810@gmail.com"  # <<< Substitua pelo seu email remetente 
-SENDER_PASSWORD = "oszm yfxo ebjr tdbf" # <<< MUITO CUIDADO AQUI! Use uma senha de APP.
+SENDER_EMAIL = os.getenv('SMTP_EMAIL')
+SENDER_PASSWORD = os.getenv('SMTP_PASSWORD') 
 RECIPIENT_EMAIL = "lucasprog1810@gmail.com" # <<< Substitua pelo email para onde o relatório será enviado
 EMAIL_SUBJECT = "Relatório Diário de Cotações - Dow Jones" # Assunto do e-mail
 ALERT_EMAIL_SUBJECT = "ALERTA: Falha na Coleta de Dados Dow Jones"

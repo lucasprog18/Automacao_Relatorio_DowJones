@@ -105,7 +105,9 @@ def generate_html_report(df: pd.DataFrame) -> str:
         <div class="email-body">
             <h2>Relatório Diário de Cotações - Dow Jones ({today_date_str})</h2>
             <p>Prezado(a) Analista/Corretor(a),</p>
-            <p>Conforme solicitado, segue o relatório diário das cotações das ações do índice Dow Jones Industrial Average, com dados atualizados de **Preço de Abertura**, **Fechamento Anterior** e **Volume Negociado**.</p>
+            <p>Conforme solicitado, segue o relatório diário das cotações das ações do índice Dow Jones Industrial Average, com dados atualizados de <b>Preço de Abertura</b>, <b>Fechamento Anterior</b> e <b>Volume Negociado</b>.</p>
+
+            <p>Informamos que estes dados são coletados dinamicamente e em tempo real do Yahoo Finance. Em situações pontuais de indisponibilidade ou latência da fonte, pode ocorrer que certas informações, como o volume negociado, não sejam carregadas. Caso necessite complementar ou validar dados específicos para a tomada de decisão, recomendamos a consulta direta no <a href="https://finance.yahoo.com/">Yahoo Finance</a>.</p>
             {html_table}
             <p>Esperamos que estas informações auxiliem em suas análises e decisões diárias.</p>
             <p>Atenciosamente,</p>

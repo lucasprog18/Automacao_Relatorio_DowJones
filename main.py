@@ -1,5 +1,5 @@
 import time
-import datetime # Importar datetime para obter a data atual
+from datetime import datetime # Importar datetime para obter a data atual
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -178,7 +178,7 @@ def main():
     # Executa o processo de scraping com retries
     final_df = run_scraper_process(max_retries=MAX_SCRAPER_RETRIES)
 
-    today_date = datetime.date.today().strftime("%d/%m/%Y") # Formato DD/MM/AAAA
+    today_date = datetime.today().strftime("%d/%m/%Y") # Formato DD/MM/AAAA
     full_email_subject = f"{EMAIL_SUBJECT} - {today_date}"
 
     # REESTRUTURANDO O BLOCO IF/ELSE PARA GARANTIR APENAS UM CAMINHO (SUCESSO OU FALHA)
@@ -189,7 +189,8 @@ def main():
         df_report = final_df.drop(columns=['Status'], errors='ignore')
 
         # Salvar em CSV
-        output_filename = "dow_jones_stock_data_csv"
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        output_filename = f"output/dow_jones_stock_data_{timestamp}.csv"
         df_report.to_csv(output_filename, index=False, encoding='utf-8')
         print(f'\nDados salvos em "{output_filename}"')
 
